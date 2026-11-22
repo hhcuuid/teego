@@ -8,10 +8,10 @@
 
 @font-face {
     font-display: swap;
-    font-family: "IBM Plex Mono";
+    font-family: "Go Mono";
     font-style: normal;
     font-weight: 400;
-    src: url('fonts/IBMPlexMono-Regular.ttf') format('truetype');
+    src: url('fonts/Go-Mono.ttf') format('truetype');
 }
 
 body {

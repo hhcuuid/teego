@@ -1,1 +1,1 @@
-# teego
+# TeeGo
