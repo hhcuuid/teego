@@ -1,0 +1,23 @@
+@font-face {
+    font-display: block;
+    font-family: "IBM Plex Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    src: url('fonts/IBMPlexSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "IBM Plex Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/IBMPlexMono-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: "IBM Plex Sans";
+}
+
+h1 {
+    font-weight: 300;
+}
