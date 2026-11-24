@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 @font-face {
     font-display: block;
     font-family: "IBM Plex Sans";
@@ -31,12 +33,216 @@
 }
 
 body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
     font-family: "IBM Plex Sans";
     background-color: var(--gray100);
+    color: var(--gray10);
+}
+
+.page {
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    width: min(1440px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 36px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--teal30);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 h1 {
-    color: var(--teal30);
+    margin: 0;
+    color: var(--gray10);
     font-weight: 400;
     font-size: 2.4rem;
+}
+
+.subtitle {
+    margin: 8px 0 0;
+    color: var(--gray40);
+}
+
+.search {
+    display: grid;
+    gap: 8px;
+    width: min(360px, 100%);
+    color: var(--gray30);
+    font-size: 0.875rem;
+}
+
+.search input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    background: var(--gray90);
+    color: var(--gray10);
+    font: inherit;
+}
+
+.search input::placeholder {
+    color: var(--gray50);
+}
+
+.search input:focus-visible {
+    outline: 2px solid var(--teal40);
+    outline-offset: 2px;
+}
+
+.table-panel {
+    display: flex;
+    min-height: 0;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--gray80);
+    border-radius: 6px;
+    background: var(--gray100);
+}
+
+.table-heading {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--gray80);
+}
+
+.table-heading h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.table-heading p {
+    margin: 0;
+    color: var(--gray40);
+    font-size: 0.875rem;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+#stock-table {
+    min-height: 0;
+    flex: 1;
+    height: 100%;
+    border: 0;
+    background: var(--gray100);
+    color: var(--gray10);
+    font-size: 0.9rem;
+}
+
+#stock-table .tabulator-header {
+    border-bottom: 1px solid var(--gray70);
+    background: var(--gray90);
+    color: var(--gray20);
+}
+
+#stock-table .tabulator-col,
+#stock-table .tabulator-col.tabulator-sortable:hover {
+    background: var(--gray90);
+}
+
+#stock-table .tabulator-col {
+    border-right-color: var(--gray80);
+}
+
+#stock-table .tabulator-col-title {
+    font-weight: 500;
+}
+
+#stock-table .tabulator-arrow {
+    border-color: var(--gray30) transparent transparent;
+}
+
+#stock-table .tabulator-col[aria-sort="ascending"] .tabulator-arrow,
+#stock-table .tabulator-col[aria-sort="descending"] .tabulator-arrow {
+    border-color: var(--teal30) transparent transparent;
+}
+
+#stock-table .tabulator-tableholder,
+#stock-table .tabulator-table {
+    background: var(--gray100);
+    color: var(--gray10);
+}
+
+#stock-table .tabulator-row {
+    border-bottom: 1px solid var(--gray80);
+    background: var(--gray100);
+    color: var(--gray10);
+}
+
+#stock-table .tabulator-row:nth-child(even) {
+    background: var(--gray90);
+}
+
+#stock-table .tabulator-row:hover {
+    background: var(--teal100);
+}
+
+#stock-table .tabulator-row .tabulator-cell {
+    border-right-color: var(--gray80);
+}
+
+#stock-table .tabulator-cell[tabulator-field="mcapbillion"],
+#stock-table .tabulator-cell[tabulator-field="beta"],
+#stock-table .tabulator-cell[tabulator-field="dividend"],
+#stock-table .tabulator-cell[tabulator-field="pettm"],
+#stock-table .tabulator-cell[tabulator-field="vol10d90d"] {
+    font-family: "IBM Plex Mono", monospace;
+    font-variant-numeric: tabular-nums;
+}
+
+#stock-table .tabulator-placeholder {
+    background: var(--gray100);
+    color: var(--gray40);
+}
+
+.table-error {
+    margin: 0;
+    padding: 16px 24px;
+    border-top: 1px solid var(--gray80);
+    color: var(--teal20);
+}
+
+@media (max-width: 720px) {
+    .page {
+        width: calc(100% - 32px);
+        padding: 16px 0;
+    }
+
+    .page-header {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .table-heading {
+        padding: 16px;
+    }
 }

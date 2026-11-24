@@ -4,14 +4,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeeGo</title>
+    <title>Stock screener | TeeGo</title>
     <link rel="icon" type="image/svg+xml" href="cactus.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tabulator-tables@6.3.1/dist/css/tabulator.min.css" />
     <link rel="stylesheet" href="styles.css" />
-
 </head>
 
 <body>
-    <h1>TeeGo</h1>
+    <main class="page">
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">Market overview</p>
+                <h1>Stock screener</h1>
+                <p class="subtitle">A snapshot of US common stocks.</p>
+            </div>
+            <label class="search">
+                <span>Search stocks</span>
+                <input id="stock-search" type="search" placeholder="Ticker, company, industry…" autocomplete="off" />
+            </label>
+        </header>
+
+        <section class="table-panel" aria-label="Stock data">
+            <div class="table-heading">
+                <h2>Stocks</h2>
+                <p id="stock-count" aria-live="polite">Loading stocks…</p>
+            </div>
+            <div id="stock-table"></div>
+            <p id="table-error" class="table-error" role="alert" hidden></p>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
     <script src="main.js"></script>
 </body>
 
