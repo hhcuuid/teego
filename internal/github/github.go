@@ -39,12 +39,6 @@ func CloneMarketRepo() error {
 	if err != nil {
 		return err
 	}
-	// defer os.RemoveAll(workDir)
-
-	// // 2. Process 1M+ files concurrently with a bounded worker pool
-	// if err := processFiles(ctx, workDir); err != nil {
-	// 	panic(err)
-	// }
 
 	return nil
 }

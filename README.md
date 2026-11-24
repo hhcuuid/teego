@@ -2,7 +2,5 @@
 
 ## TODO
 
-1. Test github workflow
-1. Include that workflow into the workflow
-
-#007d79
+1. test it
+2. #007d79

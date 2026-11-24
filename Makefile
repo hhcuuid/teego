@@ -1,9 +1,11 @@
 include .env
 
 run:
-	@GH_TOKEN=${GH_TOKEN} \
+	@FINNHUB_API_KEY=${FINNHUB_API_KEY} \
+	GH_TOKEN=${GH_TOKEN} \
 	go run .
 
 test:
-	@GH_TOKEN=${GH_TOKEN} \
-	go test ./...
+	@FINNHUB_API_KEY=${FINNHUB_API_KEY} \
+	GH_TOKEN=${GH_TOKEN} \
+	go test -v ./
