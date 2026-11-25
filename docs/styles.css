@@ -471,6 +471,7 @@ h1 {
     }
 
     .metric-search {
+        flex: 0 0 auto;
         max-width: none;
     }
 
