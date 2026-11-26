@@ -1,4 +1,3 @@
-const countElement = document.querySelector("#stock-count");
 const errorElement = document.querySelector("#table-error");
 const searchInput = document.querySelector("#stock-search");
 const tableElement = document.querySelector("#stock-table");
@@ -28,7 +27,7 @@ const formatValue = (value) =>
 
 const columns = [
     {
-        title: "Ticker | Industry",
+        title: "Ticker",
         field: "ticker",
         minWidth: 220,
         widthGrow: 2,
@@ -287,17 +286,6 @@ async function loadStocks() {
             initialSort: [{ column: "ticker", dir: "asc" }],
         });
 
-        const updateCount = (rows) => {
-            const visible = rows.length;
-            const total = stocks.length;
-            countElement.textContent = visible === total
-                ? `${total} ${total === 1 ? "stock" : "stocks"}`
-                : `${visible} of ${total} stocks`;
-        };
-
-        table.on("dataFiltered", (_filters, rows) => updateCount(rows));
-        updateCount(stocks);
-
         searchInput.addEventListener("input", () => {
             const query = searchInput.value.trim().toLowerCase();
             if (!query) {
@@ -311,7 +299,6 @@ async function loadStocks() {
             );
         });
     } catch (error) {
-        countElement.textContent = "Stocks unavailable";
         errorElement.textContent = error instanceof Error ? error.message : "An unexpected error occurred while loading stocks.";
         errorElement.hidden = false;
     }

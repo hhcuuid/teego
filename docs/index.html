@@ -14,31 +14,22 @@
     <main class="page">
         <header class="page-header">
             <div>
-                <p class="eyebrow">Market overview</p>
-                <h1>Stock screener</h1>
-                <p class="subtitle">A snapshot of US common stocks.</p>
+                <h1>US Common Stock screener</h1>
             </div>
             <label class="search">
-                <span>Search stocks</span>
                 <input id="stock-search" type="search" placeholder="Ticker, company, industry…" autocomplete="off" />
             </label>
         </header>
 
         <section class="table-panel" aria-label="Stock data">
-            <div class="table-heading">
-                <h2>Stocks</h2>
-                <p id="stock-count" aria-live="polite">Loading stocks…</p>
-            </div>
             <div id="stock-table"></div>
             <p id="table-error" class="table-error" role="alert" hidden></p>
         </section>
 
         <section id="ticker-detail" class="ticker-detail" aria-label="Ticker data" hidden>
             <div class="ticker-detail-heading">
-                <a class="back-link" href="index.html">&larr; All stocks</a>
                 <p id="ticker-meta" class="ticker-meta"></p>
                 <h2 id="ticker-name"></h2>
-                <p class="ticker-intro">Explore each metric's history in annual and quarterly views. Bars use a shared zero baseline within each chart.</p>
             </div>
             <p id="ticker-error" class="table-error" role="alert" hidden></p>
             <div class="metric-toolbar">
@@ -65,7 +56,8 @@
                 <div class="metric-grid" id="quarterly-grid"></div>
                 <p class="metric-empty" id="quarterly-empty">No quarterly metrics match your search.</p>
             </section>
-            <p class="metric-footnote">Metrics without numeric observations are omitted. Hover a bar to see its exact period and value.</p>
+            <p class="metric-footnote">Metrics without numeric observations are omitted. Hover a bar to see its exact
+                period and value.</p>
         </section>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@6.3.1/dist/js/tabulator.min.js"></script>
