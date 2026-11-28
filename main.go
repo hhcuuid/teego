@@ -16,6 +16,7 @@ func main() {
 			log.LUTC |
 			log.Lshortfile,
 	)
+	log.Default().SetPrefix("teego")
 	log.Print("@start")
 	start := time.Now()
 	defer func() {

@@ -13,14 +13,15 @@
 
 DIST=dist
 BASE=/home/holden_uuid/market
-GOOS=linux 
-GOARCH=amd64
 
-go build -o ${DIST}/market-linux-amd64 main.go
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
+  -trimpath \
+  -ldflags="-s -w" \
+  -o ${DIST}/market-linux-amd64 main.go
 
 cat << EOF > "${DIST}/market.sh"
 #!/bin/bash
-export FINNUB_API_KEY=${FINNUB_API_KEY}
+export FINNHUB_API_KEY=${FINNUB_API_KEY}
 export GH_TOKEN=${GH_TOKEN}
 nohup ${BASE}/market-linux-amd64 &
 EOF
@@ -32,8 +33,8 @@ logging:
       type: files
       include_paths:
       - ${BASE}/nohup.out
-    service:
-      pipelines:
+  service:
+    pipelines:
       default_pipeline:
-      receivers: [market]
+        receivers: [market]
 EOF

@@ -86,6 +86,12 @@ h1 {
     font-size: 2.4rem;
 }
 
+.last-updated {
+    margin: 4px 0 0;
+    color: var(--gray40);
+    font-size: 0.875rem;
+}
+
 .subtitle {
     margin: 8px 0 0;
     color: var(--gray40);
